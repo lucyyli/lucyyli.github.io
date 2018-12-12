@@ -132,8 +132,13 @@ In addition to choosing the type of neural network, this code allows the user to
 
 	<h5 class="w3-padding-32">Training Method</h5>
 
-      <p class="w3-text-grey">https://github.com/karpathy/char-rnn
-		</p>
+      <p>We used this <a href="https://github.com/karpathy/char-rnn" class="w3-text-grey">github repo</a> as a resource and template for our neural network:
+	</p>
+
+		<p>This code implements multi-layer Recurrent Neural Network (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input and trains a Recurrent Neural Network that learns to predict the next character in a sequence. The RNN can then be used to generate text character by character that will look like the original training data. </p>
+		<p>The documentation is straightfoward and walks you through the processes of downloading necessary packages, training the model, and viewing your results.</p>
+		<p>The most significant part of the process is to feed in good data. We trained both on inputs that included recipe title and ingredients and inputs with title, ingredients, and directions.</p>
+		<p>sample.lua and train.lua are where you can modify parameters and see how they affect your results.</p>
     <!-- </div> -->
 
 <!--     <div class="w3-third w3-center">
@@ -185,7 +190,7 @@ In addition to choosing the type of neural network, this code allows the user to
 
       <h5 class="w3-padding-32">Future Work</h5>
 
-      <p>In the future, if given the opportunity and time, we would like to see what interesting results our model could output if we trained it on other various aspects of recipes including the nutrition facts, cuisine type, rating, and more. We would like to experiment on how well a GANs model would perform to generate new recipes. In addition, either through more training, different parameters to our model, or pruning our results, we would like to see how we could increase our recipe accuracy and have our recipe actually correlate with ingredients, and see if we could create realistic recipes to try in the kitchen. </p>
+      <p>In the future, if given the opportunity and time, we would like to see what interesting results our model could output if we trained it on other various aspects of recipes including the nutrition facts, cuisine type, rating, and more. We would like to experiment on how well a GANs model would perform to generate new recipes. In addition, either through more training, different parameters to our model, or pruning our results, we would like to see how we could increase our recipe accuracy and have our recipe actually correlate with ingredients. It'd be interesting to see if we could create realistic recipes to try in the kitchen. </p>
 
       <h5 class="w3-padding-32">What We've Learned</h5>
 
