@@ -98,12 +98,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <p class="w3-text-grey">The data to feed into our neural network was obtained from the Epicurious recipe dataset (https://www.kaggle.com/hugodarwood/epirecipes) on Kaggle. Their database had very extensive information on over 20,000 recipes. The columns included recipe names and had other interesting data such as rating, type of cuisine, and more.
 		</p>
 
-		<img src="data.png" alt="database">
+		<img src="data.png" alt="database" width="700">
 
 	  <p class="w3-text-grey">In order to format our data correctly to feed into the model, we had to write a short Python script to convert our recipe dataset in .json to a .txt file. 
 	  </p>
 
-	  <img src="python.png" alt="python">
+	  <img src="python.png" alt="python" width="700">
 
 	  <p class="w3-text-grey">Because our recipes were provided in a .json file, this Python code extracts all of our relevant information (title of recipe, list of ingredients, and directions) and converts it to a string format.</p>
 
@@ -121,7 +121,7 @@ The character RNN we used can be found at https://github.com/karpathy/char-rnn. 
 In addition to choosing the type of neural network, this code allows the user to adjust many other parameters, including the model size, number of layers, and learning rate. See below for a full list of adjustable parameters.
 		</p>
 
-		<img src="3.png" alt="python">
+		<img src="3.png" alt="python" width="700">
 
 		<p class="w3-text-grey">As a user is training the network on text data,the neural network produces training checkpoints. These training checkpoints can then be fed back into the model to generate sample output. By storing the trained model in checkpoints, this allows for the user to store multiple models at once. This was convenient for our project, as we found some other architectures only allowed one set of data to be fully trained at a time, and would overwrite the existing model when new data was passed in.</p>
 
@@ -139,6 +139,59 @@ In addition to choosing the type of neural network, this code allows the user to
 <!--     <div class="w3-third w3-center">
       <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
     </div> -->
+  </div>
+</div>
+
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <!-- <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div> -->
+
+    <!-- <div class="w3-twothird"> -->
+      <h1>Evaluation</h1>
+      <h5 class="w3-padding-32">Results</h5>
+
+      <p>We achieved exciting and entertaining results using the character-RNN discussed above. As we were originally motivated by our excitement for food, we quite enjoyed the sample results we generated using this model. </p>
+
+      <p>In terms of evaluation, our main concern was the grammatical correctness of our generated recipes. Given that this was our primary concern, our recipes were not always functionally coherent. For example, in a given generated ingredient list, most of the words will not be misspelled. In addition, the units of measurement usually match up to the type of ingredient they are describing. However, the ingredients listed won't sound like a good combination to a human, and likely won't even include the ingredients mentioned in the title of the recipe. That being said, the grammatical correctness of our generated recipes produced entertaining results which can be found in more detail below.   </p>
+
+
+      <h5 class="w3-padding-32">LSTM</h5>
+
+      <p>In terms of overall coherency and least amount of misspellings, our best results came from training with an LSTM. As mentioned earlier, we trained on some sets of data that just included ingredients, and some that included both ingredients and instructions. Our most coherent and entertaining samples were those that included just ingredients, as it was quite difficult to produce coherent directions. A sample of both can be seen below, with the first including just ingredients, and the second with ingredients and directions.</p>
+
+      <img src="5.png" alt="LSTM">
+      <img src="6.png" alt="LSTM">
+
+      <h5 class="w3-padding-32">RNN</h5>
+
+      <p>We achieved similar results as above when using a simple RNN. This was a bit surprising to us both, as we thought the LSTM would be significantly better, given its usefulness when training on natural language. As seen below, training with a simple RNN was also able to produce interesting ingredients and directions.</p>
+
+      <img src="7.png" alt="LSTM">
+
+      <h5 class="w3-padding-32">GRU</h5>
+
+      <p>After training with the LSTM, we also trained a GRU on our data. Although similar runtime as the training for the LSTM, the results were significantly less coherent. While we could consistently produce ingredients without misspelled words with the LSTM, that was not the case with the GRU. As seen below, neither the ingredients nor directions generated by the GRU are grammatically correct English. </p>
+
+      <img src="8.png" alt="LSTM">
+
+      <h5 class="w3-padding-32">Word-RNN</h5>
+
+      <p>As mentioned above, we initially experimented with using a Word-RNN rather than a character RNN. We were concerned with the misspellings we were getting using the character-RNN, which is why we chose to look into using a Word-RNN. Because the Word-RNN doesn't break up words, we would not have any misspellings, but would trade that for overall coherency. We quickly found that the Word-RNN wasn't the right direction for us to go, as it produced a truly random sample of words, as seen below. </p>
+
+      <img src="9.png" alt="LSTM">
+
+      <h5 class="w3-padding-32">Future Work</h5>
+
+      <p>In the future, if given the opportunity and time, we would like to see what interesting results our model could output if we trained it on other various aspects of recipes including the nutrition facts, cuisine type, rating, and more. We would like to experiment on how well a GANs model would perform to generate new recipes. In addition, either through more training, different parameters to our model, or pruning our results, we would like to see how we could increase our recipe accuracy and have our recipe actually correlate with ingredients, and see if we could create realistic recipes to try in the kitchen. </p>
+
+      <h5 class="w3-padding-32">What We've Learned</h5>
+
+      <p>The two of us learned new things at every step in the process of building our model. During the data collection stage, we both learned how to find and handle large sets of data, and how to understand if the data fits the project needs and requirements. After finding the data, we had to learn how to preprocess it, and adjust it for the requirements of our project. Once we bagan training the model, we learned how to adjust the parameters of a neural net, and gain an understanding of how each parameter functionally affects the model. By getting to quickly see the results on our data achieved by adjusting parameters such as network size, number of layers, and seed text, we were able to make generalizations that allowed us to understand recurrent networks better as a whole.
+ </p>
+    <!-- </div> -->
   </div>
 </div>
 
