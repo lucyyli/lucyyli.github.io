@@ -33,26 +33,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Header -->
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">START PAGE</h1>
-  <p class="w3-xlarge">Template by w3.css</p>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+  <h1 class="w3-margin w3-jumbo">Recipe Generator</h1>
+  <p class="w3-xlarge">6.s198 Final Project by Lucy Li and Hayley Bergman</p>
+<!--   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">
+    <!-- <div class="w3-twothird"> -->
       <h1>Project Overview</h1>
-      <h5 class="w3-padding-32"></h5>
-
+<!--       <h5 class="w3-padding-32"></h5>
+ -->
       <p class="w3-text-grey">Running out of ideas in the kitchen? Need to spice things up when cooking? Look no further, and use a recipe generator! Inspired by a mutual interest of food, we were interesting in generating new and novel recipes. Using a neural network and a recipe data set, our trained model can generate brand new recipes not included in the original data.</p>
 
-	  <p>We are able to generate both a list of ingredients, as well as a set of instructions. Following the generation of the recipes, we looked at how feasible these recipes would be for a human to actually follow, and adjusted various aspects of the model to produce the most feasible recipes. 
+	  <p class="w3-text-grey">We are able to generate both a list of ingredients, as well as a set of instructions. Following the generation of the recipes, we looked at how feasible these recipes would be for a human to actually follow, and adjusted various aspects of the model to produce the most feasible recipes. 
 	  </p>
 
 	  <h1>Project Goal</h1>
 	  <p>The goal of this project was to train a neural net that generate new and novel recipes.</p>
-    </div>
+    <!-- </div> -->
 
 <!--     <div class="w3-third w3-center">
       <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
@@ -63,39 +63,47 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
+    <!-- <div class="w3-third w3-center">
       <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
+    </div> -->
 
-    <div class="w3-twothird">
+    <!-- <div class="w3-twothird"> -->
       <h1>Neural Networks</h1>
       <h5 class="w3-padding-32">Recurrent Neural Networks</h5>
 
-      <p class="w3-text-grey">Recurrent neural networks, or RNNs, are a deep learning model that can remember information that occurs over time. We chose to use an RNN for our project, because it is an established approach to generation problems. In our project, RNNs were a good approach to generation because they are able to predict what comes next in the sequence based on what's already been seen. As shown below, RNNs take new information as input, but also reroute predictions it makes back into the neural net to influence the next prediction.</p>
+      <p>Recurrent neural networks, or RNNs, are a deep learning model that can remember information that occurs over time. We chose to use an RNN for our project, because it is an established approach to generation problems. In our project, RNNs were a good approach to generation because they are able to predict what comes next in the sequence based on what's already been seen. As shown below, RNNs take new information as input, but also reroute predictions it makes back into the neural net to influence the next prediction.</p>
+
+      <img src="rnn.png" alt="RNN">
 
       <h5 class="w3-padding-32">Long Short-Term Memory</h5>
 
-      <p class="w3-text-grey">Although RNNs are good enough in many generating scenarios, it's still possible to do better. If we want to use more than just the prediction for the most recent state, then we must use Long Short-Term Memory RNNs, or LSTMs. By adding memory with an LSTM, we're able to keep track of predictions made for prior states, as well as decide which of these predictions are actually important enough to keep. An LSTM works better than a simple RNN in our case, because we're dealing with natural language, which is sequential data. As seen below, LSTMs are RNNs with the addition of memory.</p>
+      <p>Although RNNs are good enough in many generating scenarios, it's still possible to do better. If we want to use more than just the prediction for the most recent state, then we must use Long Short-Term Memory RNNs, or LSTMs. By adding memory with an LSTM, we're able to keep track of predictions made for prior states, as well as decide which of these predictions are actually important enough to keep. An LSTM works better than a simple RNN in our case, because we're dealing with natural language, which is sequential data. As seen below, LSTMs are RNNs with the addition of memory.</p>
+
+      <img src="lstm.png" alt="LSTM">
 
       <h5 class="w3-padding-32">Gated Recurrent Unit</h5>
 
-      <p class="w3-text-grey">Another mechanism we briefly looked at implementing was a gated recurrent unit, or GRU. Like LSTMs, GRUs are a modification on a standard RNN. GRUs use update and reset gates to decide which information should be passed through to the output. These gates are special because they can be trained from keeping data much earlier in the training process. GRUs aim to solve the same problems as LSTMs, so we chose to use LSTMs to train our model.</p>
-    </div>
+      <p>Another mechanism we briefly looked at implementing was a gated recurrent unit, or GRU. Like LSTMs, GRUs are a modification on a standard RNN. GRUs use update and reset gates to decide which information should be passed through to the output. These gates are special because they can be trained from keeping data much earlier in the training process. GRUs aim to solve the same problems as LSTMs, so we chose to use LSTMs to train our model.</p>
+    <!-- </div> -->
   </div>
 </div>
 
 <!-- Third Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">
+    <!-- <div class="w3-twothird"> -->
       <h1>Implementation</h1>
       <h5 class="w3-padding-32">Data Processing</h5>
 
       <p class="w3-text-grey">The data to feed into our neural network was obtained from the Epicurious recipe dataset (https://www.kaggle.com/hugodarwood/epirecipes) on Kaggle. Their database had very extensive information on over 20,000 recipes. The columns included recipe names and had other interesting data such as rating, type of cuisine, and more.
 		</p>
 
+		<img src="data.png" alt="database">
+
 	  <p class="w3-text-grey">In order to format our data correctly to feed into the model, we had to write a short Python script to convert our recipe dataset in .json to a .txt file. 
 	  </p>
+
+	  <img src="python.png" alt="python">
 
 	  <p class="w3-text-grey">Because our recipes were provided in a .json file, this Python code extracts all of our relevant information (title of recipe, list of ingredients, and directions) and converts it to a string format.</p>
 
@@ -107,11 +115,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 		<p class="w3-text-grey">
 The character RNN we used can be found at https://github.com/karpathy/char-rnn. This neural network supports training with an RNN, LSTM, or GRU. This network is written in Lua, and uses the Torch Neural Network Package to build the model. Below, you can see a sample of the training code that demonstrates how torch-rnn is used.
 		</p>
+
+		<img src="2.png" alt="python">
 		<p class="w3-text-grey">
 In addition to choosing the type of neural network, this code allows the user to adjust many other parameters, including the model size, number of layers, and learning rate. See below for a full list of adjustable parameters.
 		</p>
 
-    </div>
+		<img src="3.png" alt="python">
+
+		<p class="w3-text-grey">As a user is training the network on text data,the neural network produces training checkpoints. These training checkpoints can then be fed back into the model to generate sample output. By storing the trained model in checkpoints, this allows for the user to store multiple models at once. This was convenient for our project, as we found some other architectures only allowed one set of data to be fully trained at a time, and would overwrite the existing model when new data was passed in.</p>
+
+	<p class="w3-text-grey">Similar to when training, the user can adjust various parameters when generating a sample output. These parameters can be seen below.
+	</p>
+
+	<img src="4.png" alt="python">
+
+	<h5 class="w3-padding-32">Training Method</h5>
+
+      <p class="w3-text-grey">https://github.com/karpathy/char-rnn
+		</p>
+    <!-- </div> -->
 
 <!--     <div class="w3-third w3-center">
       <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
@@ -119,9 +142,9 @@ In addition to choosing the type of neural network, this code allows the user to
   </div>
 </div>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+<!-- <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-</div>
+</div> -->
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
